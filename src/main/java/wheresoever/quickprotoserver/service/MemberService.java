@@ -22,7 +22,7 @@ public class MemberService {
     @Transactional
     public Long join(Member member) {
         if (isDuplicatedUsername(member.getEmail())) {
-            throw new IllegalStateException("previously exists email");
+            throw new IllegalStateException("postiously exists email");
         }
 
         memberRepository.save(member);

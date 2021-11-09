@@ -33,4 +33,19 @@ public class CommentChild {
 
     private LocalDateTime at;
 
+
+    public CommentChild(Member member, Comment comment, String content) {
+        this.member = member;
+        this.comment = comment;
+        this.content = content;
+        this.at = LocalDateTime.now();
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void cancel(){
+        canceledAt = LocalDateTime.now();
+    }
 }

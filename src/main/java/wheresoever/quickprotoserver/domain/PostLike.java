@@ -30,4 +30,14 @@ public class PostLike {
     private Member member;
 
     private LocalDateTime at;
+
+    public PostLike(Post post, Member member) {
+        this.post = post;
+        this.member = member;
+        this.at = LocalDateTime.now();
+    }
+
+    public void cancel(){
+        canceledAt = LocalDateTime.now();
+    }
 }

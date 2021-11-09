@@ -7,7 +7,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -39,4 +41,23 @@ public class Post {
     private Category category;
 
     private LocalDateTime at;
+
+    public Post(Member member, Category category, String content) {
+        this.member = member;
+        this.category = category;
+        this.content = content;
+        this.at = LocalDateTime.now();
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public void cancel() {
+        canceledAt = LocalDateTime.now();
+    }
 }
